@@ -4,7 +4,7 @@ class loginmapper    {
 
 function check_used_login($postData){
     // $conn = new PDO("mysql:host=localhost;dbname=web_auth", DBUSER, DBPASSWD);
-    $conn = new PDOAgent("mysql","root","","localhost","web_auth");
+    $conn = new PDOAgent("mysql","root","","localhost",DB);
 
     $conn->connect();
     //Setup the Bind Parameters

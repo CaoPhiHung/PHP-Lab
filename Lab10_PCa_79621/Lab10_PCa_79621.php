@@ -15,7 +15,6 @@
 
     if(!empty($_GET)){
       if($_GET['action'] == 'logout'){
-        $_SESSION['loggedin'] = false;
         session_destroy();
         $page->Redirect("Lab10_PCa_79621.php");
       }
@@ -33,6 +32,7 @@
       $loggedin = $lm->check_used_login($_POST);
       if($loggedin){
         $_SESSION['loggedin'] = $loggedin;
+        $_SESSION['userid'] = $_POST['userID'];
         $products = $cart->getProducts();
         $page->show_all_products($products);
       }else{

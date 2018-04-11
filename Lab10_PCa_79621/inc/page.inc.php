@@ -51,6 +51,7 @@ function show_all_carts($products) { ?>
     <td style="width: 200px"><b>Product</b></td>
     <td style="width: 200px"><b>Count</b></td>
     <td style="width: 200px"><b>Total</b></td>
+    <td style="width: 200px"><b>Delete</b></td>
    </tr>
    <?php
     foreach($products as $product){
@@ -59,6 +60,7 @@ function show_all_carts($products) { ?>
      <td><?php print HtmlSpecialChars($product->product); ?></td>
      <td><?php print $product->count; ?></td>
      <td>$<?php print $product->total; ?></td>
+     <td><?php echo "<a href='show-cart.inc.php?action=delete&id=$product->id'>Delete</a>" ?></td>
     </tr>
    <?php 
     }

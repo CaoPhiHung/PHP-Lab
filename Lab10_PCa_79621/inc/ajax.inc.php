@@ -1,5 +1,6 @@
 <?php
  session_start();
+ require_once("pdo.inc.php");
  require_once( "config.inc.php" );
  require_once( "productmapper.inc.php" );
  $cart = new productmapper();
