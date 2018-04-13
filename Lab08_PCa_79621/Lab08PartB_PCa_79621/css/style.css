@@ -1,0 +1,16 @@
+fieldset {
+    width: 75%;
+    border: 2px solid #cccccc;
+ }
+
+ label {
+    width: 75px;
+    float: left;
+    text-align: left;
+    font-weight: bold;
+ }
+
+ input {
+    border: 1px solid #000;
+    padding: 3px;
+ }
