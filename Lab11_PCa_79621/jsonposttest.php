@@ -11,4 +11,6 @@ $json = $msg;
 
 $data = json_decode($json);
 
+echo $json;
+
 ?>
