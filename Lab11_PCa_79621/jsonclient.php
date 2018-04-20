@@ -1,7 +1,7 @@
 <?php
 
 
-$url = "http://localhost/dev/Lab11_PCa_79621//jsonposttest.php";
+$url = "http://localhost/temp/Lab11REST/jsonposttest.php";
 $data = '{"CustomerID":"3","Name":"Michelle Arthur","Address":"357 North Road","City":"Yarraville"}';
 
 $ch = curl_init( $url );
