@@ -1,11 +1,12 @@
 <?php
-include 'conn.php';
+include 'inc/conn.inc.php';
  
-$name = $_POST['name'];
-$address = $_POST['address'];
-$city = $_POST['city'];
+$isbn = $_POST['isbn'];
+$author = $_POST['author'];
+$title = $_POST['title'];
+$price = $_POST['price'];
  
-$sql = "INSERT INTO `books`.`customers` (`Name`, `Address`, `City`) VALUES ('$name', '$address','$city');";
+$sql = "INSERT INTO books (`ISBN`, `Author`, `Title`, `Price`) VALUES ('$isbn', '$author','$title',$price);";
  
 if ($connection->query($sql)) {
 $msg = array("status" =>1 , "msg" => "Your record inserted successfully");

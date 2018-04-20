@@ -1,6 +1,4 @@
 <?php
-
-
 class Page {
 
     private $title = "Lab 11";
@@ -22,7 +20,6 @@ class Page {
     
 
     function header()   { 
-               
         ?>
         <!-- Begin Header -->
         <!DOCTYPE HTML>
@@ -37,7 +34,7 @@ class Page {
             </TITLE>
             <!-- JQuery Libirary and js file for AJAX call -->
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-            <script type="text/javascript" src="inc/main.js"></script>
+            <!-- <script type="text/javascript" src="inc/main.js"></script> -->
 
         </HEAD>
         <BODY>
@@ -65,21 +62,86 @@ class Page {
     
     }
 
-    function listCustomers($customers) { ?>
+    function addBookForm() { ?>
+
+        <FORM METHOD="POST" ACTION="Lab11_PCa_79621.php">
+        
+        <DIV CLASS="form-group">
+            <LABEL FOR="name">ISBN</LABEL>
+            <INPUT TYPE="text" CLASS="form-control" NAME="ISBN" ID="ISBN" ARIA-DESCTIBEDBY="ISBNHelp" PLACEHOLDER="ISBN">
+        </DIV>
+    
+        <DIV CLASS="form-group">
+            <LABEL FOR="Author">Author</LABEL>
+            <INPUT TYPE="text" CLASS="form-control" NAME="Author" ID="Author" ARIA-DESCTIBEDBY="AuthorHelp" PLACEHOLDER="Author">
+        </DIV>
+    
+        <DIV CLASS="form-group">
+            <LABEL FOR="city">Title</LABEL>
+            <INPUT TYPE="text" CLASS="form-control" NAME="Title" ID="Title" ARIA-DESCTIBEDBY="TitleHelp" PLACEHOLDER="Title">
+        </DIV>
+
+        <DIV CLASS="form-group">
+            <LABEL FOR="city">Price</LABEL>
+            <INPUT TYPE="text" CLASS="form-control" NAME="price" ID="price" ARIA-DESCTIBEDBY="priceHelp" PLACEHOLDER="00.00">
+        </DIV>
+
+            <INPUT CLASS="btn btn-primary" TYPE="SUBMIT" VALUE="Add Book">
+        
+        </FORM>
+        <?php
+        }
+
+        function editBookForm($book) { ?>
+
+            <FORM METHOD="POST" ACTION="Lab11_PCa_79621.php">
+            <input type="hidden" value="update" name="action" />
+            <DIV CLASS="form-group">
+                <LABEL FOR="name">ISBN</LABEL>
+                <INPUT TYPE="text" CLASS="form-control" NAME="ISBN" ID="ISBN" ARIA-DESCTIBEDBY="ISBNHelp" value="<?php echo $book->ISBN;?>" readonly>
+            </DIV>
+        
+            <DIV CLASS="form-group">
+                <LABEL FOR="Author">Author</LABEL>
+                <INPUT TYPE="text" CLASS="form-control" NAME="Author" ID="Author" ARIA-DESCTIBEDBY="AuthorHelp" value="<?php echo $book->Author;?>">
+            </DIV>
+        
+            <DIV CLASS="form-group">
+                <LABEL FOR="city">Title</LABEL>
+                <INPUT TYPE="text" CLASS="form-control" NAME="Title" ID="Title" ARIA-DESCTIBEDBY="TitleHelp" value="<?php echo $book->Title;?>">
+            </DIV>
+    
+            <DIV CLASS="form-group">
+                <LABEL FOR="city">Price</LABEL>
+                <INPUT TYPE="text" CLASS="form-control" NAME="price" ID="price" ARIA-DESCTIBEDBY="priceHelp" value="<?php echo $book->Price;?>"">
+            </DIV>
+    
+                <INPUT CLASS="btn btn-primary" TYPE="SUBMIT" VALUE="Edit Book">
+            
+            </FORM>
+            <?php
+            }
+    
+    function listBooks($books) { ?>
      <!-- Start Customer List -->
-        <h1>Customers list</h1>
+        <h1>Books list</h1>
         <table cellpadding="5" cellspacing="0" border="0">
         <tr>
-            <td><b>Customer</b></td>
-            <td><b>Address</b></td>
-            <td><b>City</b></td>
+            <td><b>ISBN</b></td>
+            <td><b>Author</b></td>
+            <td><b>Title</b></td>
+            <td><b>Price</b></td>
+            <td><b>Delete</b></td>
         </tr>
 
     <?php
-        foreach($customers as $customer) {
-            echo '<tr><td>'.$customer->Name.'</td>';
-            echo '<td>'.$customer->Address.'</td>';
-            echo '<td>'.$customer->City.'</td>';
+        foreach($books as $book) {
+            echo '<tr><td>'.$book->ISBN.'</td>';
+            echo '<td>'.$book->Author.'</td>';
+            echo '<td>'.$book->Title.'</td>';
+            echo '<td>'.$book->Price.'</td>';
+            echo "<td><a href='?action=delete&id=$book->ISBN'>Delete</a></td>";
+            echo "<td><a href='?action=update&id=$book->ISBN'>Update</a></td>";
             echo '</tr>';
         }
     ?>

@@ -22,7 +22,7 @@
     
 
  }else{
-    $page->Redirect("../Lab10_PCa_79621.php");
+    $page->Redirect("./Lab10_PCa_79621.php");
  }
 
 ?>

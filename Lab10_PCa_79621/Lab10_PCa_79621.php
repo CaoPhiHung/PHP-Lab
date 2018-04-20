@@ -50,6 +50,3 @@
    $page->footer();
 
   ?>
-  
-</body>
-</html>

@@ -36,16 +36,15 @@ class Page {
 
     function addCustomerForm() { ?>
 
-    <FORM METHOD="POST" ACTION="">
     
     <DIV CLASS="form-group">
-        <LABEL FOR="name">Name</LABEL>
+        <LABEL FOR="name">ISBN</LABEL>
         <INPUT TYPE="text" CLASS="form-control" NAME="name" ID="name" ARIA-DESCTIBEDBY="nameHelp" PLACEHOLDER="Full Name">
         <small id="nameHelp" class="form-text text-muted">Customer first and last name.</small>
     </DIV>
 
     <DIV CLASS="form-group">
-        <LABEL FOR="address">Address</LABEL>
+        <LABEL FOR="address">Author</LABEL>
         <INPUT TYPE="text" CLASS="form-control" NAME="address" ID="address" ARIA-DESCTIBEDBY="addressHelp" PLACEHOLDER="Street Address">
         <small id="addressHelp" class="form-text text-muted">Address including street number, suite number and BSMT if applicable</small>
     </DIV>
@@ -56,7 +55,6 @@ class Page {
     </DIV>
         <INPUT CLASS="btn btn-primary" TYPE="SUBMIT" VALUE="Add Customer">
     
-    </FORM>
     <?php
     }
 

@@ -1,22 +1,23 @@
 <?php
-include 'conn.php';
+include 'inc/conn.inc.php';
 //Update record in database
  
-$name = $_POST['name'];
-$address = $_POST['address'];
-$city = $_POST['city'];
-$customerid = $_POST['customerid'];
+$isbn = $_POST['isbn'];
+$author = $_POST['author'];
+$title = $_POST['title'];
+$price = $_POST['price'];
  
-$query = "UPDATE `customers` 
-            SET `Name`='$name' ,
-                `address`='$address' 
-                WHERE  `CustomerID`='$customerid'";
+$query = "UPDATE `books` 
+            SET `Author`='$author' ,
+                `Title`='$title',
+                `Price`='$price' 
+             WHERE   `ISBN`='$isbn'";
 
 
 if ($connection->query($query)) {
        $msg = array("status" =>1 , "msg" => "Record Updated successfully");
 }else {
-    echo "Error: " . $query . "<br>" . mysqli_error($connention);
+    echo "Error: " . $query . "<br>" . mysqli_error($connection);
 }
  
  

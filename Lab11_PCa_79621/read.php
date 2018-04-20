@@ -1,17 +1,16 @@
 <?php
-include 'conn.php';
+include 'inc/conn.inc.php';
 //Select data from database
  
  
-$getData = "select * from customers";
+$getData = "select * from books";
 $qur = $connection->query($getData);
- 
+
 while($r = mysqli_fetch_assoc($qur)){
- 
-$msg[] = array("CustomerID" => $r['CustomerID'], 
-    "Name" => $r['Name'],
-    "Address" => $r['Address'], 
-    "City" => $r['City']);
+$msg[] = array("ISBN" => $r['ISBN'], 
+    "Author" => $r['Author'],
+    "Title" => $r['Title'], 
+    "Price" => $r['Price']);
 }
 
 

@@ -1,10 +1,10 @@
 <?php
-include 'conn.php';
+include 'inc/conn.inc.php';
 //Delete record from database
  
-$customerid = $_POST['customerid'];
+$id = $_POST['id'];
  
-$query = "DELETE FROM books.`customers` WHERE `CustomerID`='$customerid';";
+$query = "DELETE FROM books WHERE `ISBN`='$id';";
 
 if ($connection->query($query)) {
     $msg = array("status" =>1 , "msg" => "Record Deleted successfully");

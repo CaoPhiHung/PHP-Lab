@@ -1,9 +1,9 @@
 <?php
 
 
-$url = "http://localhost/temp/Lab11REST/jsonposttest.php";
-$data = '{"CustomerID":"3","Name":"Michelle Arthur","Address":"357 North Road","City":"Yarraville"}';
-
+$url = "http://localhost:8080/dev/PHP-Lab/Lab11_PCa_79621/jsonposttest.php";
+// $data = '{"CustomerID":"3","Name":"Michelle Arthur","Address":"357 North Road","City":"Yarraville"}';
+$data = '';
 $ch = curl_init( $url );
 curl_setopt( $ch, CURLOPT_POST, 1);
 curl_setopt( $ch, CURLOPT_POSTFIELDS, $data);
